@@ -12,7 +12,7 @@ pipeline{
             steps{
 
                 echo 'building project through jenkinsfile'
-                bat 'mvn clean Package'
+                sh 'mvn clean Package'
                 echo 'building Completed through jenkinsfile'
             }
             post{
