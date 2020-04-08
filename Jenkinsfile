@@ -9,10 +9,8 @@ pipeline{
     stages{
 
         stage('Build'){
-            steps{
-
-                echo 'building project through jenkinsfile'
-                bat 'mvn clean Package'
+            withMaven(maven : 'LocalMaven') {
+                bat'mvn clean compile'
                 echo 'building Completed through jenkinsfile'
             }
             post{
