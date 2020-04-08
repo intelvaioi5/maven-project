@@ -14,7 +14,7 @@ pipeline{
 
                 success{
                     echo 'Now Archieving..'
-                    archieveArtifact
+                    archiveArtifact artifacts: '**/*.war'
                 }
             }
 
