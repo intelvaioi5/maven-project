@@ -7,6 +7,7 @@ pipeline{
         stage('Build'){
             steps{
 
+                echo 'building project through jenkinsfile'
                 sh 'mvn clean package'
             }
             post{
