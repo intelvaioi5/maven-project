@@ -13,6 +13,7 @@ pipeline{
 
                 echo 'building project through jenkinsfile'
                 sh 'mvn clean package'
+                echo 'building Completed through jenkinsfile'
             }
             post{
 
