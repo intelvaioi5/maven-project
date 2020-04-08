@@ -11,16 +11,10 @@ pipeline{
             steps{
 
                 echo 'building project through jenkinsfile'
-                sh 'clean Package'
+                sh 'mvn clean Package'
                 echo 'building Completed through jenkinsfile'
             }
-            post{
-
-                success{
-                    echo 'Now Archieving..'
-                    archiveArtifact artifacts: '**/*.war'
-                }
-            }
+            
 
         }
     }
