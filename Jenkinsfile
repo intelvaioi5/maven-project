@@ -11,7 +11,7 @@ pipeline{
             steps{
 
                 echo 'building project through jenkinsfile'
-                sh 'mvn clean Package'
+                sh 'mvn clean package'
                 echo 'building Completed through jenkinsfile'
             }
             
