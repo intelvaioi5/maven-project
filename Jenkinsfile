@@ -15,7 +15,12 @@ pipeline{
                 sh 'mvn clean package'
                 echo 'building Completed through jenkinsfile'
             }
-            
+           post {
+               success{
+                   echo 'now archieving...'
+                   archiveArtifacts artifacts: '**/target/*.war'
+               }
+           } 
 
         }
     }
