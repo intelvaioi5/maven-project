@@ -18,9 +18,9 @@ pipeline{
            post {
                success{
                    echo 'now archieving...'
-                   archiveArtifacts artifacts: '**/target/*.war'
+                   archiveArtifacts artifacts: '**/*.war'
                }
-           } 
+           }
 
         }
         stage('Deploy to Staging'){
@@ -28,6 +28,6 @@ pipeline{
                 build job:'Deploy to Staging'
                 echo 'deployment done on echo'
             }
-        }        
+        }
     }
 }
