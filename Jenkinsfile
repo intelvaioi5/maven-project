@@ -5,7 +5,7 @@ pipeline{
         
         string(name:'tomcat_dev',defaultValue:'\\localhost', description:'Staging Server')
         string(name:'tomcat_prod',defaultValue:'\\localhost',description:'Production server')
-        string(name:'pkg_path',defaultValue:'C:\Program Files (x86)\Jenkins\workspace\FullyAutomated\webapp\target\webapp.war',description:'Package path')
+        string(name:'pkg_path',defaultValue:'C:\\Program Files (x86)\Jenkins\workspace\FullyAutomated\webapp\target\webapp.war',description:'Package path')
     }
 
     tools{
