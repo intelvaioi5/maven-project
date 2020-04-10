@@ -41,7 +41,7 @@ pipeline{
                 stage('Deploy to Staging'){
                     steps{
                         echo 'Staging Deployment started'
-                        sh cp '{params.pkg_path}' '{params.tomcat_dev}:d$\\Tushar\\Study\\Tomcat 8.5\\webapps'
+                        bat cp '{params.pkg_path}' '{params.tomcat_dev}:d$\\Tushar\\Study\\Tomcat 8.5\\webapps'
                         echo 'Staging Deployment completed'
                     }
 
