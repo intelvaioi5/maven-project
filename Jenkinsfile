@@ -3,7 +3,7 @@ pipeline{
     agent any
     parameters{
         
-        string(name:'tomcat dev',defaultvalue:localhost, description:'Staging Server')
+        string(name:'tomcat dev',defaultValue:localhost, description:'Staging Server')
         string(name:'tomcat prod',defaultValue:localhost,description:'Production server')
 
     }
