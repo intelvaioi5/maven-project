@@ -41,7 +41,7 @@ pipeline{
                 stage('Deploy to Staging'){
                     steps{
                         echo 'Staging Deployment started'
-                        sh cp '{params.pkg_path}' '{params.tomcat_dev}:d$\Tushar\Study\Tomcat 8.5\webapps'
+                        sh cp '{params.pkg_path}' '{params.tomcat_dev}:d$\\Tushar\\Study\\Tomcat 8.5\\webapps'
                         echo 'Staging Deployment completed'
                     }
 
@@ -49,7 +49,7 @@ pipeline{
                 stage('Deploy to Production'){
                     steps{
                         echo 'Prod deployment started'
-                        sh cp '{params.pkg_path}' '{params.tomcat_prod}:d$\Tushar\Study\Tomcat 8.5\webapps'
+                        sh cp '{params.pkg_path}' '{params.tomcat_prod}:d$\\Tushar\\Study\\Tomcat 8.5\\webapps'
                         echo 'Prod deployment completed'
                     }
                 }
