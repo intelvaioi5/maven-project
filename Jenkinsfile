@@ -14,10 +14,10 @@ pipeline{
         jdk 'LocalJDK'
     }
 
-    triggers{
+    /*triggers{
 
         pollSCM('* * * * *')
-    }
+    }*/
 
     stages{
 
