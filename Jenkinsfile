@@ -1,60 +1,48 @@
 pipeline{
 
     agent any
+    parameters{
+        
+        string(name:'tomcat dev',defaultvalue:localhost, description:'Staging Server')
+        string(name:'tomcat prod',defaultValue:localhost,description:'Production server')
+
+    }
 
     tools{
+
         maven 'LocalMaven'
         jdk 'LocalJDK'
     }
+
+    trigger{
+
+        pollscm('* * * * *')
+    }
+
     stages{
 
-        stage('Build'){
+        stage('Build projecct'){
             steps{
 
-                echo 'building project through jenkinsfile'
                 sh 'mvn clean package'
-                echo 'building Completed through jenkinsfile'
-            }
-           post {
-               success{
-                   echo 'now archieving...'
-                   archiveArtifacts artifacts: '**/target/*.war'
-               }
-           }
-
-        }
-
-        stage('Deploy to Staging'){
-            steps{
-                build job:'Deploy to Staging'
-                echo 'deployment done on echo'
             }
             post{
+
                 success{
-                    echo 'Deploy to staging completed'
+                    echo 'Now Archieving'
+                    archiveArtifacts artifacts:'**/target/*.war'
                 }
-                failure{
-                    echo 'Staging Deployment failed'
+            }
+
+        }
+    /*    stage('Deployment Parallel'){
+            parallel{
+
+                stage('Deploy to Staging'){
+
                 }
             }
         }
-
-        stage('Deploy to Production'){
-
-            steps{
-                timeout(time:5, unit:'DAYS'){
-                    input message:'Approve Production Deployment?'
-                }
-                build job: 'Deploy to Prod'
-            }
-            post{
-                success{
-                    echo 'Deployed to Production completed'
-                }
-                failure{
-                    echo 'Production Deployment failed'
-                }
-            }
-        }
+        */
     }
 }
