@@ -14,7 +14,7 @@ pipeline{
         jdk 'LocalJDK'
     }
 
-    trigger{
+    triggers{
 
         pollscm('* * * * *')
     }
