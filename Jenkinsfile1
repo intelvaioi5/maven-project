@@ -28,7 +28,16 @@ pipeline{
 
                  steps{
 
-                 echo 'Generating Report'
+                     input message 'Do you want to proceed?'
+
+                 
+                 }
+                 post{
+
+                     success{
+
+                         echo 'Generating Report'
+                     }
                  }
              }
             } 
