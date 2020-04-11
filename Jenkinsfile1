@@ -14,5 +14,20 @@ pipeline{
                 echo 'This is build step'
             }
         }
+        stage('parallel Stages'){
+            parallel{
+             
+             stage('Test'){
+             steps{
+                echo 'This is test step'
+             }
+             }
+
+             stage('Report'){
+
+                 echo 'Generating Report'
+             }
+            } 
+        }
     }
 }
