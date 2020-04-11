@@ -28,7 +28,7 @@ pipeline{
 
                  steps{
 
-                     input message 'Do you want to proceed?'
+                     input message: 'Do you want to proceed?'
 
                  
                  }
