@@ -14,6 +14,7 @@ pipeline{
                 echo 'This is build step'
             }
         }
+
         stage('parallel Stages'){
             parallel{
              
@@ -25,7 +26,10 @@ pipeline{
 
              stage('Report'){
 
+                 steps{
+
                  echo 'Generating Report'
+                 }
              }
             } 
         }
